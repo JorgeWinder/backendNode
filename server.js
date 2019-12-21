@@ -16,7 +16,7 @@ app.use(router)
 router.get('/', function(req, res){
     console.log(req.headers)
     res.header({
-        "custom-header": "Nuestro valor predeterminado"
+        "custom-header": "Nuestro valor predeterminado de cabecera"
     })
     res.send('Llamado a get')
 })
