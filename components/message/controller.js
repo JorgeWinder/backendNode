@@ -30,6 +30,16 @@
       })
   }
 
+  function updateMensaje(){
+
+    return new Promise((resolver, rechazar)=>{
+
+      store.updateMensaje()
+
+    })
+
+  }
+
   module.exports = {
     addMessage,
     getMessage,

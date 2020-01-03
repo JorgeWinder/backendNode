@@ -48,4 +48,10 @@ router.post('/', function(req, res){
     
 })
 
+router.patch('/', function(req, res){
+
+    
+
+})
+
 module.exports = router

@@ -25,7 +25,23 @@ async function getMessage(){
     return messages
 }
 
+async function updateMesage(id, nuevo_mensaje){
+
+    const filtro = {}
+
+    if(filtro==null){
+        Promise.reject('No se hizo registro')
+        return false
+    }
+
+    const mensaje = await model.findOne({_id: id})
+    mensaje.message = nuevo_mensaje
+    mensaje.save()
+
+}
+
 module.exports = {
     add: addMessage,
     List: getMessage,
+    update: updateMesage
 }
