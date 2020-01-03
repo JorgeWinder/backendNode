@@ -42,5 +42,5 @@
 
   module.exports = {
     addMessage,
-    getMessage,
+    getMessage
   }
