@@ -4,7 +4,8 @@
   "description": "Chat NodeJS",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [
     "chat",
@@ -15,6 +16,16 @@
   "dependencies": {
     "body-parse": "^0.1.0",
     "express": "^4.17.1",
-    "mongoose": "^5.8.2"
-  }
+    "mongoose": "^5.8.4",
+    "npm": "^6.13.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgeWinder/backendNode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JorgeWinder/backendNode/issues"
+  },
+  "homepage": "https://github.com/JorgeWinder/backendNode#readme"
 }

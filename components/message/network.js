@@ -5,8 +5,10 @@ const controller = require('./controller')
 const router = express.Router()
 
 router.get('/', function(req, res){
+
+    const filterUser = req.query.user || null
     
-    controller.getMessage()
+    controller.getMessage(filterUser)
         .then((messageList)=>{
             response.success(req, res, messageList, 200)
         })
@@ -48,9 +50,15 @@ router.post('/', function(req, res){
     
 })
 
-router.patch('/', function(req, res){
+router.patch('/:id', function(req, res){
 
-    
+    controller.updateMensaje(req.params.id, req.body.texto)
+    .then((data)=>{
+        response.success(req, res, data, 200)
+    })
+    .catch((data)=>{
+        response.error(req, res, data, 500)
+    })
 
 })
 
