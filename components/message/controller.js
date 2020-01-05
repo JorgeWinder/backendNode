@@ -1,6 +1,6 @@
   const store = require('./store')
   
-  function addMessage(user, message){
+  function addMessage(user, message, file){
 
     return new Promise( function(resolver, rechazar){
 
@@ -10,10 +10,17 @@
             return false
         }
 
+        let fileUrl = ''
+
+        if(file){
+          fileUrl = 'http://localhost:3000/app/files/' + file.filename
+        }
+
         const fullMessage = {
             user: user,
             message: message,
             date: new Date(),
+            file: fileUrl
         }
     
         store.add(fullMessage)

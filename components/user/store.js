@@ -12,14 +12,13 @@ db.connect('mongodb+srv://user-mbd:92kTFt6OQqlKe1Gu@cluster0-qmwio.gcp.mongodb.n
 console.log('[DB] Conectada con éxito')
 
 // Agregar datos //
-function addMessage(message){
-    //list.push(message)
-    const myMessage = new model(message)
-    myMessage.save()     
+function addUser(user){
+    const objUser = new model(user)
+    objUser.save()     
 }
 
 // Listar datos //
-async function getMessage(filteruser){
+async function getUser(filteruser){
 
     return new Promise( async(resolver, rechazar)=>{
         //return list
@@ -33,28 +32,24 @@ async function getMessage(filteruser){
 
             resolver(model.find())
 
-            // await model.find(filter).populate('user')
-            // .exec((error, populated)=>{
-            //     if(error){
-            //         rechazar()
-            //         return false
-            //     }
-            //     resolver(populated)
-            // })
     })
     
 }
 
-async function updateMesage(id, mensaje){
 
-    const find_mensaje = await model.findOne({_id: id})
-    find_mensaje.message = mensaje
-    return await find_mensaje.save()
+async function updateUser(id, name){
+    const find_user = await model.findOne({_id: id})
+    find_user.name = name
+    return find_user.save()
+}
 
+async function deleteUser(id){
+    return await model.deleteOne({_id: id})
 }
 
 module.exports = {
-    add: addMessage,
-    List: getMessage,
-    update: updateMesage
+    add: addUser,
+    List: getUser,
+    update: updateUser,
+    delete: deleteUser
 }
