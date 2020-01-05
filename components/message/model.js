@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const mySchema = new Schema({
     user: {
         type: Schema.ObjectId,
-        ref: 'users' // Colleción donde está vinculado el campo de referencia
+        ref: 'users' // Colleción donde está vinculado el campo de referencia //
     },
     message: {
         type: String,
