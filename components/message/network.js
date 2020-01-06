@@ -92,4 +92,16 @@ router.patch('/:id', function(req, res){
 
 })
 
+router.delete('/:id', function(req, res){
+
+    controller.deleteMensaje(req.params.id)
+    .then((data)=>{
+        response.success(req, res, `Mensaje ${req.params.id} eliminado`, 200)
+    })
+    .catch((data)=>{
+        response.error(req, res, data, 500)
+    })
+
+})
+
 module.exports = router

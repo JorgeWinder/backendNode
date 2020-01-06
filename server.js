@@ -29,5 +29,5 @@ router(app)
 app.use('/app', express.static('public'))
 
 server.listen(config.PORT, function(){
-    console.log('Servidor NodeJS en escucha en http://localhost:' + config.PORT)
+    console.log(`Servidor NodeJS en escucha en ${config.HOST}:${config.PORT}`)
 })

@@ -46,8 +46,16 @@ async function updateMesage(id, mensaje){
 
 }
 
+async function deleteMensaje(id){
+    return await model.deleteOne({
+            _id: id
+        })
+}
+
+
 module.exports = {
     add: addMessage,
     List: getMessage,
-    update: updateMesage
+    update: updateMesage,
+    delete: deleteMensaje
 }

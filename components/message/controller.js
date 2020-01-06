@@ -54,8 +54,23 @@
 
   }
 
+  function deleteMensaje(id){
+
+    return new Promise((resolver, rechazar)=>{
+
+      if(!id){
+        rechazar('ID invalido')
+        return false
+      }
+
+      return resolver(store.delete(id))
+
+    })
+  }
+
   module.exports = {
     addMessage,
     getMessage,
-    updateMensaje
+    updateMensaje,
+    deleteMensaje
   }
