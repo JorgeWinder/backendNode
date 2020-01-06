@@ -1,6 +1,7 @@
 const express = require('express')
 const multer =  require('multer')
 const path = require('path')
+//const cors = require('cors')
 
 const response = require('../../network/response')
 const controller = require('./controller')
@@ -26,8 +27,10 @@ const upload = multer({
 //     dest: 'public/files/'
 // })
 
-
-
+// var corsOptions = {
+//     origin: 'http://example.com',
+//     optionsSuccessStatus: 201 // some legacy browsers (IE11, various SmartTVs) choke on 204
+//   }
 
 router.get('/', function(req, res){
 
