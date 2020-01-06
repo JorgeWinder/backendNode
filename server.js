@@ -8,13 +8,11 @@ const socket = require('./socket')
 const cors = require('cors')
 const db = require('./db')
 
-// Para el uso de variables de entorno en el proyecto
-require('dotenv').config()
-
 //const router = require('./components/message/network')
 const router = require('./network/routers')
+const config = require('./config').config
 
-db.connect(process.env.DB_URI)
+db.connect(config.DB_URI)
 
 app.use(cors({
     origin: 'http://localhost:3000',
@@ -30,6 +28,6 @@ router(app)
 
 app.use('/app', express.static('public'))
 
-server.listen(3000, function(){
-    console.log('Servidor NodeJS en escucha en http://localhost:3000')
+server.listen(config.PORT, function(){
+    console.log('Servidor NodeJS en escucha en http://localhost:' + config.PORT)
 })
