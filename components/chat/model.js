@@ -3,14 +3,13 @@ const Schema = mongoose.Schema
 
 const mySchema = new Schema({
  
-    chat: {
-        type: Schema.ObjectId
-    },
-    users: {
-        type: [String],
-        ref: 'users'
-    }
-
+    users: [
+        {
+            type: Schema.ObjectId,
+            ref: 'users'
+        }
+    ]    
+    
 })
 
 const model = mongoose.model('chats', mySchema)

@@ -10,8 +10,7 @@
       }
 
       const nuevoUser = {
-        name: name,
-        date: new Date()
+        name: name
       }
 
       store.add(nuevoUser)
