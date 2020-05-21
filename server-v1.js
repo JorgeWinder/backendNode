@@ -10,7 +10,7 @@ var app = express()
 // })
 
 app.use(bodyParser.json())
-app.use(bodyParsergit .urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(router)
 
 router.get('/', function(req, res){
